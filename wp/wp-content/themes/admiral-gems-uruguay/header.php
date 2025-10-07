@@ -8,15 +8,31 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <header class="site-header" style="background: rgba(255,255,255,.9);">
-	<div class="container">
+	<div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px;">
 		<a href="<?php echo esc_url(home_url('/')); ?>" class="brand" aria-label="Admiral Gems Uruguay">
 			<span class="brand-mark" aria-hidden="true">
-				<img src="<?php echo esc_url( get_theme_file_uri('assets/logo-transparent.png') ); ?>" alt="Admiral Gems Uruguay" style="height:96px; width:auto; display:block;">
+				<img src="<?php echo esc_url( get_theme_file_uri('assets/logo-transparent.png') ); ?>" alt="Admiral Gems Uruguay" style="height:56px; width:auto; display:block;">
 			</span>
 			<span class="brand-name">Admiral Gems Uruguay</span>
 		</a>
+		<nav style="display: flex; gap: 32px; align-items: center;">
+			<a href="#featured" style="color: var(--color-black); font-size: 14px; font-weight: 500; text-decoration: none;">Featured</a>
+			<a href="#collection" style="color: var(--color-black); font-size: 14px; font-weight: 500; text-decoration: none;">Products</a>
+			<a href="#gallery" style="color: var(--color-black); font-size: 14px; font-weight: 500; text-decoration: none;">Gallery</a>
+			<a href="#our-story" style="color: var(--color-black); font-size: 14px; font-weight: 500; text-decoration: none;">Our Story</a>
+			<a href="#contact" style="background: linear-gradient(135deg, #9333EA 0%, #581C87 100%); color: white; padding: 8px 20px; border-radius: 999px; font-size: 14px; font-weight: 600; text-decoration: none;">Contact</a>
+		</nav>
+		<button class="mobile-menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
 	</div>
 </header>
+
+<nav class="mobile-nav" aria-label="Mobile menu">
+	<a href="#featured">Featured</a>
+	<a href="#collection">Products</a>
+	<a href="#gallery">Gallery</a>
+	<a href="#our-story">Our Story</a>
+	<a href="#contact">Contact</a>
+</nav>
 
 <div class="whatsapp-float" aria-label="WhatsApp">
 	<a href="https://wa.me/59895052840" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp +59895052840">

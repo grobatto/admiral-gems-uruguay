@@ -799,18 +799,35 @@ input:focus, textarea:focus { border-color: var(--color-admiral-blue); box-shado
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive */
-@media (max-width: 960px) {
-  .products-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
-  .products-section .products-grid { grid-template-columns: 1fr 1fr; max-width: 100%; }
-  .contact { grid-template-columns: 1fr; }
-  .philosophy { padding: 48px 32px; }
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-  .collection-grid { grid-template-columns: repeat(2, 1fr); }
-  .why-uruguay-section .container > div > div[style*="grid-template-columns: 1fr 1fr"] {
-    grid-template-columns: 1fr !important;
-    gap: 32px !important;
+/* Responsive Design - Mobile First Approach */
+
+/* Large Desktop (1400px and up) */
+@media (min-width: 1400px) {
+  :root {
+    --container-max: 1320px;
   }
+}
+
+/* Desktop and Tablets - Landscape (960px - 1199px) */
+@media (max-width: 1199px) {
+  :root {
+    --container-max: 960px;
+  }
+  .products-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 32px; 
+  }
+  .hero h1 { font-size: clamp(40px, 6vw, 56px); }
+}
+
+/* Tablets - Portrait and Landscape (768px - 959px) */
+@media (max-width: 960px) {
+  :root {
+    --space-section: 80px;
+    --space-section-sm: 60px;
+  }
+  
+  /* Header */
   .site-header nav.desktop-nav {
     display: none !important;
   }
@@ -820,37 +837,421 @@ input:focus, textarea:focus { border-color: var(--color-admiral-blue); box-shado
   .site-header .container {
     position: relative;
   }
+  
+  /* Hero Section */
+  .hero {
+    padding-top: calc(var(--space-section-sm) + 80px);
+    min-height: 80vh;
+  }
+  .hero h1 { font-size: clamp(32px, 5vw, 48px); }
+  .hero p.tagline { font-size: clamp(16px, 2.5vw, 20px); }
+  .hero .logo-large img { height: 180px; }
+  
+  /* Products Grid */
+  .products-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 24px; 
+  }
+  .products-section .products-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+    max-width: 100%; 
+  }
+  
+  /* Why Uruguay Section */
+  .why-uruguay-section .container > div > div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .why-uruguay-section .container > div > div[style*="grid-template-columns: repeat(auto-fit"] {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* How to Order Section */
+  .how-to-buy-section [style*="grid-template-columns: repeat(4, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px !important;
+  }
+  
+  /* Contact Section */
+  .contact { 
+    grid-template-columns: 1fr; 
+    gap: 32px;
+  }
+  
+  /* Philosophy Section */
+  .philosophy { 
+    padding: 48px 32px; 
+  }
+  .philosophy h2 { font-size: clamp(24px, 4vw, 36px); }
+  .philosophy p { font-size: 16px; }
+  
+  /* Gallery */
+  .gallery-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 12px;
+  }
+  
+  /* Collection Grid */
+  .collection-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+  }
+  
+  /* Stats Section */
+  .why-uruguay-section [style*="grid-template-columns: repeat(3, 1fr)"] {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .why-uruguay-section [style*="grid-template-columns: repeat(3, 1fr)"] > div {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20px 0 !important;
+  }
+  .why-uruguay-section [style*="grid-template-columns: repeat(3, 1fr)"] > div:last-child {
+    border-bottom: none;
+  }
 }
+
+/* Mobile Devices - Landscape (640px - 767px) */
+@media (max-width: 767px) {
+  .container {
+    padding: 0 20px;
+  }
+  
+  /* Products on Tablet Portrait */
+  .products-grid { 
+    grid-template-columns: 1fr; 
+    gap: 20px;
+  }
+  .products-section .products-grid { 
+    grid-template-columns: 1fr; 
+  }
+  
+  /* Buttons */
+  .btn {
+    width: 100%;
+    padding: 14px 28px;
+    font-size: 15px;
+  }
+  
+  /* How to Order */
+  .how-to-buy-section [style*="grid-template-columns: repeat(4, 1fr)"],
+  .how-to-buy-section [style*="grid-template-columns: repeat(2, 1fr)"] {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+}
+
+/* Mobile Devices - Portrait (up to 640px) */
 @media (max-width: 640px) {
-  .section { padding: var(--space-section-sm) 0; }
-  .products-grid { grid-template-columns: 1fr; }
-  .products-section .products-grid { grid-template-columns: 1fr; max-width: 100%; }
-  .site-header .brand .brand-name { display: none; }
-  .hero h1 { font-size: 42px !important; line-height: 1.2; }
-  .hero p.tagline { font-size: 16px !important; }
-  .contact .card { padding: 32px 24px; }
-  .whatsapp-float { right: 20px; bottom: 20px; }
-  .whatsapp-float a { width: 56px; height: 56px; }
-  .gallery-grid { grid-template-columns: 1fr; }
-  .collection-grid { grid-template-columns: 1fr; }
+  :root {
+    --space-section: 60px;
+    --space-section-sm: 40px;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  .section { 
+    padding: var(--space-section-sm) 0; 
+  }
+  
+  /* Header */
+  .site-header .brand .brand-name { 
+    display: none; 
+  }
+  .site-header .brand img {
+    height: 40px !important;
+  }
+  .mobile-nav {
+    top: 72px;
+  }
+  
+  /* Hero Section */
+  .hero {
+    min-height: auto;
+    padding: 100px 0 60px;
+  }
+  .hero .logo-large {
+    margin-bottom: 32px !important;
+  }
+  .hero .logo-large img { 
+    height: 140px !important;
+  }
+  .hero h1 { 
+    font-size: 28px !important; 
+    line-height: 1.2;
+    margin-bottom: 20px !important;
+  }
+  .hero p.tagline { 
+    font-size: 16px !important;
+    line-height: 1.4;
+    margin-bottom: 32px !important;
+  }
+  .hero .reveal {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+  .hero .reveal a.btn {
+    margin: 0 !important;
+    width: 100%;
+  }
+  .btn.glass {
+    margin-left: 0 !important;
+  }
+  
+  /* Trust Badges */
+  .hero [style*="display: flex"] span[style*="display: flex"] {
+    font-size: 14px !important;
+    padding: 6px 12px;
+  }
+  
+  /* Products Section */
+  .products-header {
+    margin-bottom: 48px;
+  }
+  .products-header h2 {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+  .products-header p {
+    font-size: 16px;
+  }
+  .products-grid { 
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .products-section .products-grid { 
+    grid-template-columns: 1fr; 
+    max-width: 100%; 
+  }
+  .product-card {
+    border-radius: 20px;
+  }
+  .product-caption {
+    padding: 20px;
+  }
+  .product-caption h3 {
+    font-size: 16px;
+  }
+  .product-caption p {
+    font-size: 13px;
+  }
+  
+  /* Quality Badges */
+  .quality-badges {
+    gap: 6px;
+  }
+  .badge {
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+  
+  /* Contact Section */
+  .contact .card { 
+    padding: 28px 20px; 
+  }
+  .contact .card h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .contact .meta {
+    font-size: 15px;
+  }
+  form.contact-form .row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  input[type="text"], 
+  input[type="email"], 
+  textarea {
+    padding: 12px 14px;
+    font-size: 15px;
+  }
+  
+  /* Philosophy Section */
+  .philosophy { 
+    padding: 32px 20px; 
+  }
+  .philosophy h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .philosophy p {
+    font-size: 15px;
+    margin-bottom: 14px;
+  }
+  
+  /* Why Uruguay Section */
+  .why-uruguay-section {
+    padding: 60px 0 !important;
+  }
+  .why-uruguay-section h2 {
+    font-size: 28px !important;
+    margin-bottom: 32px !important;
+  }
+  .why-uruguay-section h3 {
+    font-size: 22px !important;
+  }
+  .why-uruguay-section p {
+    font-size: 15px !important;
+  }
+  
+  /* Stats */
+  .why-uruguay-section [style*="font-size: clamp(48px, 8vw, 72px)"] {
+    font-size: 40px !important;
+  }
+  .why-uruguay-section [style*="font-size: 16px"] {
+    font-size: 14px !important;
+  }
+  
+  /* How to Order Section */
+  .how-to-buy-section {
+    padding: 60px 0 !important;
+  }
+  .how-to-buy-section h2 {
+    font-size: 28px !important;
+  }
+  .how-to-buy-section > div > p {
+    font-size: 16px !important;
+  }
+  .how-to-buy-section [style*="padding: 32px"] {
+    padding: 24px 20px !important;
+  }
+  .how-to-buy-section h3 {
+    font-size: 18px !important;
+  }
+  .how-to-buy-section p {
+    font-size: 14px !important;
+  }
+  .how-to-buy-section [style*="font-size: 48px"] {
+    font-size: 32px !important;
+  }
+  
+  /* Gallery */
+  .gallery-grid { 
+    grid-template-columns: 1fr;
+    gap: 12px; 
+  }
+  
+  /* Collection Grid */
+  .collection-grid { 
+    grid-template-columns: 1fr; 
+  }
+  
+  /* WhatsApp Float */
+  .whatsapp-float { 
+    right: 16px; 
+    bottom: 16px; 
+  }
+  .whatsapp-float a { 
+    width: 52px; 
+    height: 52px; 
+  }
+  .whatsapp-float a svg {
+    width: 26px;
+    height: 26px;
+  }
+  
+  /* Language Switcher */
+  .lang-switcher {
+    position: fixed;
+    top: 14px;
+    right: 56px;
+    z-index: 1001;
+    font-size: 11px;
+    padding: 5px 8px;
+    gap: 4px;
+  }
+  .lang-option {
+    padding: 3px 6px !important;
+  }
+  
+  /* Buttons */
   .btn {
     width: 100%;
     text-align: center;
     margin: 8px 0;
+    padding: 14px 24px;
+    font-size: 15px;
   }
-  .hero .reveal a.btn {
-    margin: 8px 0 !important;
+  
+  /* Footer */
+  .site-footer {
+    padding: 20px 0;
+    font-size: 13px;
   }
+  .site-footer .note {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+  
+  /* Prevent horizontal scroll */
   body {
     overflow-x: hidden;
   }
-  .lang-switcher {
-    position: fixed;
-    top: 16px;
-    right: 60px;
-    z-index: 1001;
-    font-size: 12px;
-    padding: 6px 10px;
+  html {
+    overflow-x: hidden;
+  }
+  
+  /* Product Popup */
+  #productPopup > div {
+    width: 95%;
+    margin: 0 auto;
+  }
+  #productPopup [style*="padding: 32px"] {
+    padding: 24px 20px !important;
+  }
+  #popupImage {
+    height: 220px !important;
+  }
+  #popupTitle {
+    font-size: 20px !important;
+  }
+  #popupDesc {
+    font-size: 13px !important;
+  }
+}
+
+/* Extra Small Mobile Devices (up to 375px) */
+@media (max-width: 375px) {
+  .hero h1 { 
+    font-size: 24px !important; 
+  }
+  .hero p.tagline { 
+    font-size: 14px !important;
+  }
+  .hero .logo-large img { 
+    height: 120px !important;
+  }
+  .products-header h2 {
+    font-size: 28px;
+  }
+  .btn {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+  .whatsapp-float a { 
+    width: 48px; 
+    height: 48px; 
+  }
+  .whatsapp-float a svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Landscape Orientation Fix for Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+    padding: 80px 0 40px;
+  }
+  .section {
+    padding: 40px 0;
   }
 }
 
