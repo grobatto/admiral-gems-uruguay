@@ -119,15 +119,15 @@ function admiral_gems_handle_contact() {
         wp_send_json_error(['message' => __('Por favor completa todos los campos correctamente.', 'admiral-gems-uruguay')], 400);
     }
 
-    $admin_email = get_option('admin_email');
-    $subject = 'Nuevo mensaje desde Admiral Gems Uruguay';
+    $to_email = 'admiralgemsuruguay@gmail.com';
+    $subject = 'Wholesale Inquiry - Admiral Gems Uruguay';
     $headers = ['Content-Type: text/html; charset=UTF-8', 'Reply-To: ' . $name . ' <' . $email . '>'];
-    $body = '<h2>Contacto</h2>'
-        . '<p><strong>Nombre:</strong> ' . esc_html($name) . '</p>'
+    $body = '<h2>Wholesale Inquiry</h2>'
+        . '<p><strong>Name:</strong> ' . esc_html($name) . '</p>'
         . '<p><strong>Email:</strong> ' . esc_html($email) . '</p>'
-        . '<p><strong>Mensaje:</strong><br>' . nl2br(wp_kses_post($message)) . '</p>';
+        . '<p><strong>Requirements:</strong><br>' . nl2br(wp_kses_post($message)) . '</p>';
 
-    $sent = wp_mail($admin_email, $subject, $body, $headers);
+    $sent = wp_mail($to_email, $subject, $body, $headers);
     if ($sent) {
         wp_send_json_success(['message' => __('Mensaje enviado. Gracias por contactarnos.', 'admiral-gems-uruguay')]);
     }
