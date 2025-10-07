@@ -138,7 +138,7 @@ add_action('wp_ajax_nopriv_admiral_gems_contact', 'admiral_gems_handle_contact')
 
 // SEO: basic meta + Open Graph in head
 add_action('wp_head', function () {
-    $desc = 'Premium Uruguayan amethyst and agate. Minimalist elegance, geological perfection.';
+    $desc = 'Professional wholesale Uruguayan amethysts direct from Artigas. EXTRA-Q5 certified quality. Committed to complete soil restoration. International shipping to 15+ countries.';
     $site_name = get_bloginfo('name');
     $site_url = home_url('/');
     $logo = get_theme_file_uri('/assets/og-default.png');

@@ -732,6 +732,17 @@ input:focus, textarea:focus { border-color: var(--color-admiral-blue); box-shado
     grid-template-columns: 1fr !important;
     gap: 32px !important;
   }
+  .sustainability-featured .stagger-container[style*="grid-template-columns: repeat(3, 1fr)"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .how-to-buy-section .stagger-container[style*="grid-template-columns: repeat(4, 1fr)"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+@media (max-width: 960px) {
+  .site-header nav {
+    display: none !important;
+  }
 }
 @media (max-width: 640px) {
   .section { padding: var(--space-section-sm) 0; }
@@ -744,5 +755,18 @@ input:focus, textarea:focus { border-color: var(--color-admiral-blue); box-shado
   .whatsapp-float a { width: 56px; height: 56px; }
   .gallery-grid { grid-template-columns: 1fr; }
   .collection-grid { grid-template-columns: 1fr; }
+  .sustainability-featured .stagger-container[style*="grid-template-columns: repeat(3, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+  .hero .reveal[style*="display: flex"] {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+  .how-to-buy-section .stagger-container[style*="grid-template-columns: repeat(4, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+  .philosophy div[style*="grid-template-columns: repeat(3, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
 }
 
