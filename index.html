@@ -551,11 +551,7 @@
             
             <h3 id="popupTitle" style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 700; color: #1D1D1F; margin-bottom: 12px; text-align: center;"></h3>
             
-            <p id="popupDesc" style="color: #6e6e73; font-size: 14px; line-height: 1.6; margin-bottom: 20px; text-align: center;"></p>
-            
-            <div id="popupMeta" style="background: #F5F5F7; border-radius: 12px; padding: 16px; margin-bottom: 24px;">
-                <!-- Metadata will be inserted here -->
-            </div>
+            <p id="popupDesc" style="color: #6e6e73; font-size: 14px; line-height: 1.6; margin-bottom: 24px; text-align: center;"></p>
             
             <div style="display: grid; gap: 10px;">
                 <a id="popupWhatsApp" href="#" target="_blank" style="background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); color: white; padding: 14px 28px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 15px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25); transition: all 0.3s;">
@@ -592,7 +588,6 @@ function openProductPopup(title, desc, image, size, use, quality, useDesc) {
     const popupTitle = document.getElementById('popupTitle');
     const popupDesc = document.getElementById('popupDesc');
     const popupImage = document.getElementById('popupImage');
-    const popupMeta = document.getElementById('popupMeta');
     const popupWhatsApp = document.getElementById('popupWhatsApp');
     const popupEmail = document.getElementById('popupEmail');
     
@@ -600,22 +595,14 @@ function openProductPopup(title, desc, image, size, use, quality, useDesc) {
     popupTitle.textContent = title;
     popupDesc.textContent = desc;
     popupImage.innerHTML = `<img src="${image}" alt="${title}" style="max-height: 100%; max-width: 100%; object-fit: contain; border-radius: 8px;">`;
-    popupMeta.innerHTML = `
-        <div style="display: flex; gap: 16px; font-size: 14px; color: #1D1D1F; flex-wrap: wrap; justify-content: center; margin-bottom: 10px;">
-            <span style="display: flex; align-items: center; gap: 6px;">📏 <strong>${size}</strong></span>
-            <span style="display: flex; align-items: center; gap: 6px;">🎯 <strong>${use}</strong></span>
-            <span style="display: flex; align-items: center; gap: 6px;">💎 <strong>${quality}</strong></span>
-        </div>
-        <p style="font-size: 13px; color: #6e6e73; text-align: center; font-style: italic; margin: 0; line-height: 1.5;">${useDesc}</p>
-    `;
     
     // Set WhatsApp link
-    const waMessage = `Hello, I'm interested in: ${title}%0A%0ASize range: ${size}%0AQuality: ${quality}%0AUse: ${use}%0A%0APlease send me pricing and availability.`;
+    const waMessage = `Hello, I'm interested in: ${title}%0A%0APlease send me pricing and availability.`;
     popupWhatsApp.href = `https://wa.me/59895052840?text=${waMessage}`;
     
     // Set Email link
     const emailSubject = encodeURIComponent(`Inquiry: ${title}`);
-    const emailBody = encodeURIComponent(`Hello,\n\nI'm interested in:\n\nProduct: ${title}\nSize range: ${size}\nQuality: ${quality}\nIntended use: ${use}\n\nPlease send me pricing, availability, and shipping options.\n\nThank you.`);
+    const emailBody = encodeURIComponent(`Hello,\n\nI'm interested in: ${title}\n\nPlease send me pricing, availability, and shipping options.\n\nThank you.`);
     popupEmail.href = `mailto:admiralgemsuruguay@gmail.com?subject=${emailSubject}&body=${emailBody}`;
     
     // Show popup
