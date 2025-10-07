@@ -914,30 +914,42 @@ input:focus, textarea:focus { border-color: var(--color-admiral-blue); box-shado
 /* Mobile Devices - Landscape (640px - 767px) */
 @media (max-width: 767px) {
   .container {
-    padding: 0 20px;
+    padding: 0 20px !important;
   }
   
   /* Products on Tablet Portrait */
   .products-grid { 
-    grid-template-columns: 1fr; 
-    gap: 20px;
+    grid-template-columns: 1fr !important; 
+    gap: 20px !important;
   }
   .products-section .products-grid { 
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr !important; 
   }
   
   /* Buttons */
-  .btn {
-    width: 100%;
-    padding: 14px 28px;
-    font-size: 15px;
+  .btn,
+  a.btn {
+    width: 100% !important;
+    padding: 14px 28px !important;
+    font-size: 15px !important;
+    margin: 8px 0 !important;
   }
   
   /* How to Order */
-  .how-to-buy-section [style*="grid-template-columns: repeat(4, 1fr)"],
-  .how-to-buy-section [style*="grid-template-columns: repeat(2, 1fr)"] {
+  .how-to-buy-section [style*="grid-template-columns"],
+  .why-uruguay-section [style*="grid-template-columns"] {
     grid-template-columns: 1fr !important;
     gap: 20px !important;
+  }
+  
+  /* Hero adjustments */
+  .hero .logo-large img {
+    height: 180px !important;
+  }
+  .hero .reveal {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
   }
 }
 
@@ -949,11 +961,11 @@ input:focus, textarea:focus { border-color: var(--color-admiral-blue); box-shado
   }
   
   .container {
-    padding: 0 16px;
+    padding: 0 16px !important;
   }
   
   .section { 
-    padding: var(--space-section-sm) 0; 
+    padding: var(--space-section-sm) 0 !important; 
   }
   
   /* Header */
@@ -967,57 +979,78 @@ input:focus, textarea:focus { border-color: var(--color-admiral-blue); box-shado
     top: 72px;
   }
   
-  /* Hero Section */
+  /* Hero Section - Override inline styles */
   .hero {
-    min-height: auto;
-    padding: 100px 0 60px;
+    min-height: auto !important;
+    padding: 100px 0 60px !important;
   }
   .hero .logo-large {
     margin-bottom: 32px !important;
   }
   .hero .logo-large img { 
     height: 140px !important;
+    max-height: 140px !important;
   }
   .hero h1 { 
     font-size: 28px !important; 
-    line-height: 1.2;
+    line-height: 1.2 !important;
     margin-bottom: 20px !important;
+  }
+  .hero h1 br {
+    display: none;
   }
   .hero p.tagline { 
     font-size: 16px !important;
-    line-height: 1.4;
+    line-height: 1.4 !important;
     margin-bottom: 32px !important;
   }
+  .hero p.tagline br {
+    display: none;
+  }
   .hero .reveal {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
   }
   .hero .reveal a.btn {
     margin: 0 !important;
-    width: 100%;
+    width: 100% !important;
+    display: block !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
   }
   .btn.glass {
     margin-left: 0 !important;
   }
   
-  /* Trust Badges */
+  /* Trust Badges - Override inline styles */
+  .hero [style*="display: flex"][style*="gap: 40px"] {
+    gap: 12px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
   .hero [style*="display: flex"] span[style*="display: flex"] {
     font-size: 14px !important;
-    padding: 6px 12px;
+    padding: 6px 12px !important;
+  }
+  .hero [style*="display: flex"] span[style*="color: #D2D2D7"] {
+    display: none !important;
   }
   
-  /* Products Section */
+  /* Products Section - Override inline padding */
+  .products-section {
+    padding: 60px 0 !important;
+  }
   .products-header {
-    margin-bottom: 48px;
+    margin-bottom: 48px !important;
   }
   .products-header h2 {
-    font-size: 32px;
-    margin-bottom: 12px;
+    font-size: 32px !important;
+    margin-bottom: 12px !important;
   }
   .products-header p {
-    font-size: 16px;
+    font-size: 16px !important;
   }
   .products-grid { 
     grid-template-columns: 1fr;
@@ -1084,7 +1117,7 @@ input:focus, textarea:focus { border-color: var(--color-admiral-blue); box-shado
     margin-bottom: 14px;
   }
   
-  /* Why Uruguay Section */
+  /* Why Uruguay Section - Override inline styles */
   .why-uruguay-section {
     padding: 60px 0 !important;
   }
@@ -1093,10 +1126,23 @@ input:focus, textarea:focus { border-color: var(--color-admiral-blue); box-shado
     margin-bottom: 32px !important;
   }
   .why-uruguay-section h3 {
-    font-size: 22px !important;
+    font-size: 20px !important;
   }
   .why-uruguay-section p {
     font-size: 15px !important;
+  }
+  /* Override grid inline styles */
+  .why-uruguay-section [style*="display: grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .why-uruguay-section [style*="border-right"] {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+    padding: 20px 0 !important;
+  }
+  .why-uruguay-section [style*="border-right"]:last-child {
+    border-bottom: none !important;
   }
   
   /* Stats */
@@ -1107,8 +1153,9 @@ input:focus, textarea:focus { border-color: var(--color-admiral-blue); box-shado
     font-size: 14px !important;
   }
   
-  /* How to Order Section */
-  .how-to-buy-section {
+  /* How to Order Section - Override all inline styles */
+  .how-to-buy-section,
+  section[style*="padding: 100px 0"] {
     padding: 60px 0 !important;
   }
   .how-to-buy-section h2 {
@@ -1117,7 +1164,8 @@ input:focus, textarea:focus { border-color: var(--color-admiral-blue); box-shado
   .how-to-buy-section > div > p {
     font-size: 16px !important;
   }
-  .how-to-buy-section [style*="padding: 32px"] {
+  .how-to-buy-section [style*="padding: 32px"],
+  .how-to-buy-section [style*="padding: 20px 22px 22px"] {
     padding: 24px 20px !important;
   }
   .how-to-buy-section h3 {
@@ -1128,6 +1176,14 @@ input:focus, textarea:focus { border-color: var(--color-admiral-blue); box-shado
   }
   .how-to-buy-section [style*="font-size: 48px"] {
     font-size: 32px !important;
+  }
+  .how-to-buy-section [style*="font-size: 28px"] {
+    font-size: 20px !important;
+  }
+  /* Override grid for steps */
+  .how-to-buy-section [style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
   }
   
   /* Gallery */
@@ -1169,13 +1225,20 @@ input:focus, textarea:focus { border-color: var(--color-admiral-blue); box-shado
     padding: 3px 6px !important;
   }
   
-  /* Buttons */
-  .btn {
-    width: 100%;
-    text-align: center;
-    margin: 8px 0;
-    padding: 14px 24px;
-    font-size: 15px;
+  /* Buttons - Override all inline styles */
+  .btn,
+  a.btn,
+  .hero a.btn {
+    width: 100% !important;
+    text-align: center !important;
+    margin: 8px 0 !important;
+    padding: 14px 24px !important;
+    font-size: 15px !important;
+    display: block !important;
+    box-sizing: border-box !important;
+  }
+  .btn:first-child {
+    margin-top: 0 !important;
   }
   
   /* Footer */
