@@ -1,0 +1,39 @@
+# WordPress core files
+wp/wp-admin/
+wp/wp-includes/
+wp/wp-content/plugins/
+wp/wp-content/upgrade/
+wp/wp-content/uploads/
+wp/wp-content/cache/
+
+# WordPress config
+wp/wp-config.php
+
+# Large files and archives
+*.zip
+*.pdf
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+error_log
+debug.log
+
+# Backup files
+*.bak
+*.swp
+*~
+
+# Node modules if any
+node_modules/
+
+# Database
+*.sql
+*.sqlite
+
+# Environment files
+.env
+.env.local
