@@ -342,11 +342,13 @@
 </section>
 
 <!-- How to Buy Section -->
-<section class="section how-to-buy-section" style="background: linear-gradient(135deg, #F5F5F7 0%, #FFFFFF 100%); padding: 100px 0;">
-	<div class="container">
+<section class="section how-to-buy-section" style="background: linear-gradient(180deg, #000000 0%, #0f0520 50%, #000000 100%); color: white; padding: 100px 0; position: relative; overflow: hidden;">
+	<!-- Gradient overlay -->
+	<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 30%, rgba(147, 51, 234, 0.08) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(88, 28, 135, 0.06) 0%, transparent 60%); z-index: 0;"></div>
+	<div class="container" style="position: relative; z-index: 1;">
 		<div class="reveal" style="text-align: center; margin-bottom: 64px;">
-			<h2 style="font-family: 'Montserrat', sans-serif; font-size: clamp(36px, 5vw, 48px); font-weight: 700; color: #1D1D1F; margin-bottom: 16px; letter-spacing: -0.02em;">Professional Wholesale Process</h2>
-			<p style="font-size: 20px; color: #6e6e73; max-width: 700px; margin: 0 auto;">Simple, transparent, and professional — from inquiry to delivery</p>
+			<h2 style="font-family: 'Montserrat', sans-serif; font-size: clamp(36px, 5vw, 48px); font-weight: 700; background: linear-gradient(135deg, #FFFFFF 0%, #C084FC 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px; letter-spacing: -0.02em;">Professional Wholesale Process</h2>
+			<p style="font-size: 20px; color: rgba(255, 255, 255, 0.7); max-width: 700px; margin: 0 auto;">Simple, transparent, and professional — from inquiry to delivery</p>
 		</div>
 		
 		<!-- 4-step grid -->
