@@ -190,9 +190,9 @@
 			hero_tagline: 'Directamente desde la fuente, cada geoda impresionante y<br>cristal vibrante comparte una historia de millones de años.',
 			cta_contact: 'Solicitar Cotización',
 			cta_collection: 'Ver Catálogo',
-			hero_badge_1: '⚡ Respuesta en 24h',
-			hero_badge_2: '📦 Empaque seguro',
-			hero_badge_3: '🌍 Envíos mundiales',
+			hero_badge_1: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> Respuesta en 24h',
+			hero_badge_2: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg> Empaque seguro',
+			hero_badge_3: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> Envíos mundiales',
 			
 			// Exceptional Specimens
 			exceptional_title: 'Especímenes Excepcionales',
@@ -301,9 +301,9 @@
 			hero_tagline: 'Straight from the source, each stunning geode and<br>vibrant crystal shares a millions-year-old story.',
 			cta_contact: 'Request Quote',
 			cta_collection: 'View Catalogue',
-			hero_badge_1: '⚡ 24h response',
-			hero_badge_2: '📦 Secure packaging',
-			hero_badge_3: '🌍 Worldwide shipping',
+			hero_badge_1: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> 24h response',
+			hero_badge_2: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg> Secure packaging',
+			hero_badge_3: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> Worldwide shipping',
 			
 			// Exceptional Specimens
 			exceptional_title: 'Exceptional Specimens',
